@@ -30,11 +30,12 @@ public class LoginSteps {
 	    
 	}
 
-	@When("user enters username and password")
-	public void user_enters_username_and_password() {
+	//@When("^user enters \"(.*)\" and \"(.*)\"$")  // this regular expresssion for when scenario with parametirezd value from scenario directly in when statements 
+	@When("^user enters (.*) and (.*)$") // this regular expresssion for when scenario with parametirezd value from scenario outline examples
+	public void user_enters_username_and_password(String uname,String pwd) {
 		
-	   driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
-	   driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+	   driver.findElement(By.xpath("//input[@name='username']")).sendKeys(uname);
+	   driver.findElement(By.xpath("//input[@name='password']")).sendKeys(pwd);
 	   System.out.println("Step 2 User enters credentials.");
 	}
 
