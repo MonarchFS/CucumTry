@@ -6,7 +6,19 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)  //to give must
-@CucumberOptions(features = {".//feature/Login.feature"}, glue = "StepDefinitions")//path where feature file and steps file is present
+@CucumberOptions(features = {"src/test/resources/Features/LoginFeature.feature"}, glue = "StepDefinitions"
+,monochrome=true,
+plugin= {"html:Reports\\CucumberhtmlReports.html",
+		"json:Reports\\CucumberjsonReports.json",
+		"junit:Reports\\CucumberxmlReports.xml",
+		"pretty"
+},
+dryRun =false//set to true for dryrun to check if all stepsdefination present or not
+
+
+		)//path where feature file and steps file is present
+
 public class TestRun {
 
+	
 }
