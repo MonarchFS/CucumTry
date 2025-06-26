@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="10.201" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-06-26T02:35:27.131095400Z">
-<testcase classname="Test the login functionality of OrangeHRM using Data Table" name="Test the valid login using Data Table" time="10.089">
+<testsuite name="Cucumber" time="0.133" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-06-26T03:10:29.166798600Z">
+<testcase classname="Using Tags in Cucumber" name="Scenario3" time="0.013">
 <system-out><![CDATA[
-Given user is on loginPage..................................................passed
-When user enters credentials using Data Table...............................passed
-And click on login button...................................................passed
-Then user should land on home page..........................................passed
+Given This is scenario3.....................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
