@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)  //to give must
-@CucumberOptions(features = {"src/test/resources/Features"}, glue = "StepDefinitions"
+@CucumberOptions(features = {"src/test/resources/Features/DataTable.feature"}, glue = "StepDefinitions"
 ,monochrome=true,
 plugin= {"html:Reports\\CucumberhtmlReports.html",
 		"json:Reports\\CucumberjsonReports.json",

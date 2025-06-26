@@ -1,12 +1,14 @@
 package StepDefinitions;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -40,10 +42,11 @@ public class LoginSteps {
 	}
 
 	@And("click on login button")
-	public void click_on_login_button() {
+	public void click_on_login_button() throws InterruptedException {
 		
 		driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 		System.out.println("Step 3 User clicks login button.");
+		Thread.sleep(3000);
 	}
 
 	@Then("user should land on home page")
@@ -52,5 +55,18 @@ public class LoginSteps {
 		driver.close();
 	   
 	}
+	
+
+	@When("user enters credentials using Data Table")
+	public void user_enters_credentials_using_data_table(DataTable dataTable) {
+		//List of strings for datatable
+		List<List<String>> data =dataTable.cells();
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys(data.get(0).get(0));//get0 row get0 coloumn 
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(data.get(0).get(1));
+		System.out.println("Step 2 Usser enters credentials.");
+	}
+
+
+
 
 }
